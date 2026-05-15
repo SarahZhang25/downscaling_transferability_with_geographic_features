@@ -11,7 +11,6 @@ Each region data is stored as `[region_name]/train_data_in.zarr/` and `[region_n
 Benchmark from original paper. with model implementations and a mini NA west dataset found at https://github.com/RolnickLab/downscaling-transferability.
 ## Usage
 Directories:
-* downscaling-transfer
 * `satclip/`: clone of https://github.com/microsoft/satclip
 * `outputs/`: directory that plots and results are saved to
 * `rainshift_aef_cache/`, `rainshift_aef_features/`, `rainshift_satclip_features/`: cache of geospatial features to save compute time
