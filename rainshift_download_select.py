@@ -7,28 +7,28 @@ from huggingface_hub import hf_hub_download
 # Dataset configuration
 REPO_ID = "RainShift/rainshift"
 REGIONS = [
-    "africa-south",
-    "amazon-basin",
-    "arabian-peninsula",
-    "australasia-east",
+    # "africa-south",
+    # "amazon-basin",
+    # "arabian-peninsula",
+    # "australasia-east",
     "blacksea",
-    "cape-horn",
-    "caribbean",
-    "east-asia-north-east",
-    "east-asia-south",
+    # "cape-horn",
+    # "caribbean",
+    # "east-asia-north-east",
+    # "east-asia-south",
     "europe_west",
-    "horn-of-africa",
-    "melanesia",
-    "northamerica-east",
-    "northamerica-west",
-    "southamerica-east",
-    "southeastasia-west",
-    "tibetan-plateau",
-    "west-africa"
+    # "horn-of-africa",
+    # "melanesia",
+    # "northamerica-east",
+    # "northamerica-west",
+    # "southamerica-east",
+    # "southeastasia-west",
+    # "tibetan-plateau",
+    # "west-africa"
 ]
 
 SPLITS = ["train_data_in", "train_data_out", "test_data_in", "test_data_out"]
-SPLIT = "test_data_out" # smallest split for now
+SPLIT = "test_data_in" # "test_data_out" # smallest split for now
 
 if __name__ == "__main__":
     # download
@@ -42,7 +42,7 @@ if __name__ == "__main__":
                 filename=filename, 
                 local_dir=f"data/rainshift_dataset/"
             )
-        elif not os.path.exists(f"data/rainshift_dataset/{region}/{SPLIT}.zarr"):
+        if not os.path.exists(f"data/rainshift_dataset/{region}/{SPLIT}.zarr"):
             # unzip the downloaded file to folder
             unzip_path = f"data/rainshift_dataset/{filename}"
             print(f"Unzipping {unzip_path}...")
